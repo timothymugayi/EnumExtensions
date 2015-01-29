@@ -30,11 +30,6 @@ namespace EnumExtension
         AlertDataNotFound = 6900027,
     }
 
-    /// <summary>
-    ///     The following program illustrates how to add custom attributes to an enum and extension methods
-    ///     in order to extend an enum to get additional infomation attached to each enum constant such as description. This
-    ///     also shows
-    /// </summary>
     public class Program
     {
         private static void Main(string[] args)
