@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
 namespace EnumExtension
@@ -53,6 +55,25 @@ namespace EnumExtension
                 return null;
             }
             return ((Configuration) attr);
+        }
+
+        /// <summary>
+        ///     Creates a System.Collections.Generic.List for type SystemErrorCodes
+        /// </summary>
+        /// <typeparam name="T">Enum</typeparam>
+        /// <returns>List of Enum of type T</returns>
+        public static IList<T> Values<T>()
+        {
+            Type e = typeof (T); 
+            if (!e.IsEnum)
+                throw new ArgumentException("T must be of type System.Enum");
+            return Enum.GetValues(e).Cast<T>().ToList();
+        }
+
+
+        public static string help(this Enum e)
+        {
+            
         }
     }
 }
